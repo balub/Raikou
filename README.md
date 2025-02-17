@@ -6,8 +6,8 @@
 
 - **Quick SSH Connections (WIP)** – Instantly connect to servers based on your SSH config.
 - **Session Recall (WIP)** – Easily list and reconnect to previous SSH sessions.
-- **Config Parsing (WIP)** – Extract and display relevant details from `~/.ssh/config`.
-- **Lightweight & Fast (WIP)** – Written in Go for minimal overhead and high performance.
+- **Config Parsing ** – Extract and display relevant details from `~/.ssh/config`.
+- **Lightweight & Fast ** – Written in Go for minimal overhead and high performance.
 
 ## Installation
 

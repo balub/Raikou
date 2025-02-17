@@ -2,6 +2,7 @@ package commands
 
 import (
 	"github.com/raikou/internal/ssh"
+	"github.com/raikou/internal/tui"
 )
 
 func RunCommand(args []string) {
@@ -11,7 +12,12 @@ func RunCommand(args []string) {
 
 	switch args[0] {
 	case "-l":
-		ssh.Print()
+		hosts, err := ssh.ParseSSHConfigFile()
+		if err != nil {
+			panic(err)
+		}
+
+		tui.RenderTable(hosts)
 		return
 	}
 

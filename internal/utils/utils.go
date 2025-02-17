@@ -23,7 +23,7 @@ func GetSSHDir() string {
 
 func GetSSHConfigPath() string {
 	sshDir := GetSSHDir()
-	sshConfigPath := fmt.Sprintf("%s/config", sshDir)
+	sshConfigPath := fmt.Sprintf("%s/mock-config", sshDir)
 
 	return sshConfigPath
 }
