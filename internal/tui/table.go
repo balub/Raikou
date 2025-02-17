@@ -8,6 +8,7 @@ import (
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/lipgloss"
 	"github.com/raikou/internal/ssh"
+	"github.com/raikou/internal/utils"
 )
 
 var baseStyle = lipgloss.NewStyle().
@@ -35,7 +36,13 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			return m, tea.Quit
 		case "enter":
 			return m, tea.Batch(
-				tea.Printf("SSH to", m.table.SelectedRow()[3]),
+				tea.Printf("Running command: %s\n", utils.CreateSSHCommand(
+					m.table.SelectedRow()[0],
+					m.table.SelectedRow()[1],
+					m.table.SelectedRow()[2],
+					123,
+					m.table.SelectedRow()[4],
+				)),
 			)
 		}
 	}

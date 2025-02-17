@@ -27,3 +27,8 @@ func GetSSHConfigPath() string {
 
 	return sshConfigPath
 }
+
+func CreateSSHCommand(host string, hostname string, user string, port int, identifyFile string) string {
+	// ssh -i ~/.ssh/bastion_key -p 22 bastionuser@bastion.example.com
+	return fmt.Sprintf("ssh -i %s -p %s %s@%s", identifyFile, port, user, hostname)
+}
